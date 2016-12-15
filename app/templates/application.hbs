@@ -1,0 +1,13 @@
+<h1>Welcome to the Demo App!</h1>
+
+API Key: {{config.apiKey}} <br />
+
+{{#if session.isAuthenticated}}
+    Authenticated
+{{else}}
+    Unauthenticated
+{{/if}}
+
+<hr />
+
+{{outlet}}
