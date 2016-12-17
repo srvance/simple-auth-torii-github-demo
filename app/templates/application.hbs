@@ -1,6 +1,7 @@
 <h1>Welcome to the Demo App!</h1>
 
 API Key: {{config.apiKey}} <br />
+Authorization Code: {{session.data.authenticated.authorizationCode}} <br />
 
 {{#if session.isAuthenticated}}
     Authenticated
