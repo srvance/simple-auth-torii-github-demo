@@ -1,7 +1,32 @@
-# Simple-auth-torii-github-demo
+# Combining `ember-simple-auth` and `torii` Demo App
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This ember app demonstrates how to authenticate and authorize an Ember app to use the GitHub APIs using
+[ember-simple-auth](http://ember-simple-auth.com/) and [torii](http://vestorly.github.io/torii/). It
+follows the narrative in the `ember-simple-auth`
+[guide](https://github.com/srvance/ember-simple-auth/blob/auth-torii-github-guide/guides/auth-torii-with-github.md)
+on the same topic. Each commit corresponds to a section of the guide, with some corrections
+at the end.
+
+You will need to add a `.env` file to the project root with your application client ID
+from your [GitHub OAuth Application](https://github.com/settings/developers) registration
+and token exchange URL. The token exchange URL below uses the `http-mock` implementation
+in the project.
+
+```
+GITHUB_DEV_CLIENT_ID=<YOUR CLIENT ID>
+DEV_TOKEN_EXCHANGE_URL=http://localhost:4200/api/token
+```
+
+You will also need to create a `/server/settings.js` file for the token exchange
+server's parameters, also from your OAuth Application registration.
+
+```js
+module.exports = {
+  CLIENT_ID: '<YOUR CLIENT ID>',
+  CLIENT_SECRET: '<YOUR CLIENT SECRET>',
+  USER_AGENT: '<YOUR APPLICATION NAME>'
+};
+```
 
 ## Prerequisites
 
@@ -25,29 +50,7 @@ You will need the following things properly installed on your computer.
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
 ### Building
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
