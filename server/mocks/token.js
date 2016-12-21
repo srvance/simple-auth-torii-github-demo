@@ -3,14 +3,13 @@ module.exports = function(app) {
   const express = require('express');
   const tokenRouter = express.Router();
   const https = require('https');
-  const settings = require('../settings');
 
   tokenRouter.post('/', function(req, res) {
     const body = req.body;
 
     const payload = {
-      'client_id': settings.CLIENT_ID,
-      'client_secret': settings.CLIENT_SECRET,
+      'client_id': process.env.GITHUB_DEV_CLIENT_ID,
+      'client_secret': process.env.GITHUB_DEV_CLIENT_SECRET,
       'code': body.authorizationCode
     };
     if (body.state) {
@@ -28,7 +27,7 @@ module.exports = function(app) {
         'Content-Type': 'application/json',
         'Content-Length': Buffer.byteLength(data),
         'Accept': 'application/json',
-        'User-Agent': settings.USER_AGENT
+        'User-Agent': process.env.GITHUB_DEV_USER_AGENT
       }
     };
 
