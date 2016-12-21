@@ -18,4 +18,3 @@ testem.log
 
 # dotenv files for security
 /.env*
-/server/settings.js
