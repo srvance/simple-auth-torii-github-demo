@@ -39,7 +39,7 @@
     "ember-data": "^2.9.0",
     "ember-data-github": "0.3.0",
     "ember-export-application-global": "^1.0.5",
-    "ember-load-initializers": "^0.6.3",
+    "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^2.0.3",
     "ember-simple-auth": "1.2.0-beta.1",
     "express": "^4.14.0",
